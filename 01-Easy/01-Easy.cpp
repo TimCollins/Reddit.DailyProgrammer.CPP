@@ -3,6 +3,8 @@
 #include <iostream>
 #include <conio.h>
 #include <string>
+#include <sstream>
+#include <fstream>
 using namespace std;
 
 int main()
@@ -22,10 +24,20 @@ int main()
 	cout << "\nEnter your username: ";
 	cin >> userName;
 
-	cout << "\nYour name is " << name << ", you are " << age << " years old " << 
-		"and your username is " << userName << ".";
+	stringstream outputStream;
+	outputStream << "Your name is " << name + ", you are " << age << " years old " <<
+		"and your username is " << userName + ".";
+	string output = outputStream.str();
 
-	cout << "\nPress Escape to exit";
+	ofstream file;
+
+	file.open("output.txt");
+	file << output;
+	file.close();
+
+	cout << output;
+
+	cout << "\nPress Escape to exit...";
 	while (_getch() != 27)
 		;
 
