@@ -47,7 +47,32 @@ void CreateEvent()
 
 void EditEvent()
 {
+	if (events.size() == 0)
+	{
+		cout << "\nThere are no events in the system yet.";
+		return;
+	}
 
+	int index;
+	cout << "\nEnter the index of the event to edit: ";
+	cin >> index;
+
+	string name;
+	string date;
+	string hour;
+
+	cout << "\nEnter event name: ";
+	cin >> name;
+
+	cout << "\nEnter date (dd/mm/yyyy): ";
+	cin >> date;
+
+	cout << "\nEnter hour (0-23): ";
+	cin >> hour;
+
+	Event event(events.size() + 1, name, date, hour);
+
+	events[index] = event;
 }
 
 void RemoveEvent()
