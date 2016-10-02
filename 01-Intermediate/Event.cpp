@@ -16,5 +16,5 @@ Event::~Event()
 
 void Event::ShowDetails()
 {
-	cout << "\nId: " << Id << "\nName: " << Name << "\nDate: " << Date << "\nHour: " << Hour;
+	cout << "\nId: " << Id << "\nName: " << Name << "\nDate: " << Date << "\nHour: " << Hour << "\n";
 }

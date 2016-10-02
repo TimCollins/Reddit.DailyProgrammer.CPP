@@ -41,7 +41,7 @@ void CreateEvent()
 	cout << "\nEnter hour (0-23): ";
 	cin >> hour;
 
-	Event event(1, name, date, hour);
+	Event event(events.size() + 1, name, date, hour);
 	events.push_back(event);
 }
 
@@ -56,8 +56,8 @@ void DisplayEvents()
 
 void ParseInput(int input)
 {
+	// Match ASCII code to numeric value
 	input -= 48;
-	cout << "\nInput is " << input;
 
 	switch (input)
 	{
