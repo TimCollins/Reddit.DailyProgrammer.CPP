@@ -54,6 +54,7 @@ void EditEvent()
 	}
 
 	int index;
+	cout << "\nThere are " << events.size() << ((events.size() == 1) ? " event " : " events ") << "in the system.";
 	cout << "\nEnter the index of the event to edit: ";
 	cin >> index;
 
@@ -84,17 +85,19 @@ void RemoveEvent()
 	}
 
 	int index;
-	cout << "\nThere are " << events.size() << " events in the system.";
+	cout << "\nThere are " << events.size() << ((events.size() == 1) ? " event " : " events ") << "in the system.";
 	cout << "\nEnter the index of the event to delete: ";
 	cin >> index;
 	
 	events.erase(events.begin() + index);
 
-	cout << "\nThere are " << events.size() << " events in the system.";
+	cout << "\n There are " << events.size() << ((events.size() == 1) ? " event " : " events ") << "in the system.";
 }
 
 void DisplayEvents()
 {
+	cout << "\nShowing details for " << events.size() << ((events.size() == 1) ? " event." : " events.");
+
 	for (int i = 0; i < events.size(); i++)
 	{
 		Event event = events[i];
