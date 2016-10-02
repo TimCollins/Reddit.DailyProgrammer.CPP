@@ -45,6 +45,29 @@ void CreateEvent()
 	events.push_back(event);
 }
 
+void EditEvent()
+{
+
+}
+
+void RemoveEvent()
+{
+	if (events.size() == 0)
+	{
+		cout << "\nThere are no events in the system yet.";
+		return;
+	}
+
+	int index;
+	cout << "\nThere are " << events.size() << " events in the system.";
+	cout << "\nEnter the index of the event to delete: ";
+	cin >> index;
+	
+	events.erase(events.begin() + index);
+
+	cout << "\nThere are " << events.size() << " events in the system.";
+}
+
 void DisplayEvents()
 {
 	for (int i = 0; i < events.size(); i++)
@@ -68,6 +91,15 @@ void ParseInput(int input)
 	case 2:
 		DisplayEvents();
 		break;
+
+	case 3:
+		EditEvent();
+		break;
+
+	case 4:
+		RemoveEvent();
+		break;
+
 	case 27:
 	default:
 		return;
